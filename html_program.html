@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Animated Webpage</title>
+    <link rel="stylesheet" href="styles.css">
+<style type="text/css" id="dcoder_stylesheet">/* Reset margins and paddings */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+    background-color: #34495e;
+    color: #ecf0f1;
+    line-height: 1.6;
+    animation: backgroundAnimation 10s infinite alternate ease-in-out;
+}
+
+/* Content container */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Styled heading */
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    animation: slideInFromTop 1.5s ease-out;
+}
+
+/* Paragraph styling */
+p {
+    font-size: 1.2rem;
+    text-align: justify;
+    animation: fadeIn 2.5s ease-in-out;
+}
+
+/* Button styling */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background: #3498db;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s, transform 0.2s;
+}
+
+.button:hover {
+    background: #2980b9;
+    transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes backgroundAnimation {
+    0% {
+        background-color: #34495e;
+    }
+    100% {
+        background-color: #2c3e50;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromTop {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}</style></head>
+<body>
+    <div class="container">
+        <h1 id="heading">Welcome to CodeCanvas - your journey into creative web design</h1>
+        <p id="paragraph">
+            "INTRODUCTION"
+CodeCanvas is an innovative platform designed for budding web developers, designers, and tech enthusiasts. It provides the perfect environment to explore, learn, and create stunning websites and applications. Whether you're a beginner taking your first steps into coding or a seasoned professional looking for inspiration, CodeCanvas is your creative playground.
+        </p>
+        <button id="magicButton" class="button">For more</button>
+    </div>
+    <script src="script.js"></script>
+
+<script type="text/javascript" id="dcoder_script">
+const heading = document.getElementById("heading");
+const paragraph = document.getElementById("paragraph");
+const magicButton = document.getElementById("magicButton");
+
+
+magicButton.addEventListener("click", () => {
+    
+    heading.textContent = "Why Choose CodeCanvas?!";
+    heading.style.animation = "bounce 1s";
+
+    
+    paragraph.textContent = "CREATIVE FREEDOM: Build anything from minimalist designs to complex web apps. LEARNING BY DOING: Gain practical experience with interactive challenges.                 INCLUSIVE COMMUNITY: A welcoming space for creators of all skill levels.";
+
+    
+    magicButton.style.animation = "spin 1s";
+    setTimeout(() => {
+        magicButton.style.animation = ""; // Reset animation after 1 second
+    }, 1000);
+});
+
+// Add a bounce effect to the button on hover
+magicButton.addEventListener("mouseenter", () => {
+    magicButton.style.transform = "scale(1.2)";
+});
+
+magicButton.addEventListener("mouseleave", () => {
+    magicButton.style.transform = "scale(1)";
+});
+
+// Keyframe animations (added dynamically)
+const styleSheet = document.styleSheets[0];
+styleSheet.insertRule(`
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+`, styleSheet.cssRules.length);</script></body></html>
